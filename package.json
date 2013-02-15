@@ -1,6 +1,6 @@
 {
   "name": "underscore-express",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Casey Foster <c@sey.me>",
   "main": "underscore-express",
   "devDependencies": {

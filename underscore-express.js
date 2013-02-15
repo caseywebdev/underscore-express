@@ -2,13 +2,14 @@ var _ = require('underscore');
 var fs = require('fs');
 var path = require('path');
 
+// Store templates as they're compiled in production.
 var cache = {};
 
 // Set the default template extension. Override as necessary.
-_.templateExtension = 'tmpl';
+var ext = 'tmpl';
 
 // Set the special express property for templating to work.
-_.__express = function (abs, options, cb) {
+var render = function (abs, options, cb) {
   var sync = !cb;
   try {
 
@@ -16,9 +17,8 @@ _.__express = function (abs, options, cb) {
     // sub-templates.
     var dir = path.dirname(abs);
     options.include = function (rel) {
-      var resolved = path.resolve(dir, rel + '.' + _.templateExtension);
       var include = options.include;
-      var str = _.__express(resolved, options);
+      var str = render(path.resolve(dir, rel + '.' + ext), options);
       options.include = include;
       return str;
     };
@@ -46,4 +46,8 @@ _.__express = function (abs, options, cb) {
     if (sync) throw er;
     cb(er);
   }
+};
+
+module.exports = function (app, _ext) {
+  app.engine(_ext ? ext = _ext : ext, render);
 };

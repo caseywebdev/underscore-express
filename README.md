@@ -6,14 +6,13 @@ Use Underscore templates easily in Express.
 Install
 -------
 
-In Node, all you need to do is `require('underscore-express')`.
+This package is registered in npm as `underscore-express`, so a simple...
 
-If you want to use a file extension other than `underscore`, set the
-`templateExtension` property to reflect your choice...
-
-```js
-require('underscore').templateExtension = 'erb';
+```bash
+npm install underscore-express
 ```
+
+...will do it.
 
 Usage
 -----
@@ -21,7 +20,10 @@ Usage
 In your Express app setup...
 
 ```js
-app.set('view engine', 'underscore');
+// To use the default 'tmpl' extension...
+require('underscore-express')(app);
+// Or set your own...
+require('underscore-express')(app, 'ut');
 ```
 
-Done!
+...and that's it!
