@@ -5,7 +5,7 @@ var path = require('path');
 var cache = {};
 
 // Set the default template extension. Override as necessary.
-_.templateExtension = 'tpl';
+_.templateExtension = 'tmpl';
 
 // Set the special express property for templating to work.
 _.__express = function (abs, options, cb) {
