@@ -48,9 +48,9 @@ require('underscore-express')(app, 'ut');
 
 **views/index.tmpl**
 ```tmpl
-<% include('header') %>
+<%= include('header') %>
     Welcome to my homepage!
-<% include('footer') %>
+<%= include('footer') %>
 ```
 
 **app.js**
