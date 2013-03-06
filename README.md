@@ -27,7 +27,7 @@ require('underscore-express')(app, 'ut');
 
 ## Including Subtemplates
 
-`underscore-express comes with a baked in include method. Here's an example...
+`underscore-express` comes with a baked in include method. Here's an example...
 
 **views/header.tmpl**
 ```tmpl
