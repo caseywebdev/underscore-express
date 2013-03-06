@@ -55,7 +55,7 @@ require('underscore-express')(app, 'ut');
 
 **app.js**
 ```js
-res.send('index');
+res.render('index');
 ```
 
 **RESULT**
