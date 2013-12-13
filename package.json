@@ -7,6 +7,10 @@
     "type": "git",
     "url": "https://github.com/caseywebdev/underscore-express"
   },
+  "dependencies": {
+    "express":"*",
+    "underscore-express":"*"
+  },
   "devDependencies": {
     "underscore": "x"
   }
