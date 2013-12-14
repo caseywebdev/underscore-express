@@ -8,8 +8,7 @@ require('underscore-express')(app);
 
 app.get('/', function(req, res, next) {
     res.render('index', {
-        title: 'Insert Imaginative Page Tilte Here',
-        name: 'Stranger'
+        title: 'This is a test'
     });
 });
 
