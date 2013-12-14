@@ -73,4 +73,6 @@ res.render('index');
 
 `include` is relative to the file it is called from. Feel free to use relative paths like `../../some/other/subtemplate`.
 
+## Example App
+
 For example application/usage see **./example/app.js**
