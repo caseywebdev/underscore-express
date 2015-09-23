@@ -1,6 +1,6 @@
 {
   "name": "underscore-express",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "author": "Casey Foster <c@sey.me>",
   "main": "underscore-express",
   "repository": {
@@ -8,6 +8,6 @@
     "url": "https://github.com/caseywebdev/underscore-express"
   },
   "devDependencies": {
-    "underscore": "x"
+    "underscore": "1.8.3"
   }
 }

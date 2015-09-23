@@ -28,23 +28,21 @@ var render = function (abs, options, cb) {
     if (!fn) {
       if (sync) {
         var data = fs.readFileSync(abs, 'utf8');
-        fn = cache[abs] = _.template(data, null, options);
+        fn = cache[abs] = _.template(data, options);
       } else {
         return fs.readFile(abs, 'utf8', function (er, data) {
           if (er) return cb(er);
-          fn = cache[abs] = _.template(data, null, options);
-          cb(null, fn(options));
+          try { cb(null, (cache[abs] = _.template(data, options))(options)); }
+          catch (er) { cb(er); }
         });
       }
     }
 
     // Run and return template
     var str = fn(options);
-    if (sync) return str;
-    cb(null, str);
+    if (sync) return str; else cb(null, str);
   } catch (er) {
-    if (sync) throw er;
-    cb(er);
+    if (sync) throw er; else cb(er);
   }
 };
 
