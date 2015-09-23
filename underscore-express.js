@@ -12,15 +12,16 @@ var ext = 'tmpl';
 var render = function (abs, options, cb) {
   var sync = !cb;
   try {
+    options = _.clone(options);
 
     // Helper function for sub-templating, store the original value for nested
     // sub-templates.
     var dir = path.dirname(abs);
-    options.include = function (rel) {
-      var include = options.include;
-      var str = render(path.resolve(dir, rel + '.' + ext), options);
-      options.include = include;
-      return str;
+    options.include = function (rel, extraOptions) {
+      return render(
+        path.resolve(dir, rel + '.' + ext),
+        _.extend({}, options, extraOptions)
+      );
     };
 
     // Check cache...
