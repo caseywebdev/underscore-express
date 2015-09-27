@@ -4,13 +4,12 @@ Use Underscore templates easily in Express.
 
 ## Install
 
-This package is registered in npm as `underscore-express`, so a simple...
-
+To install via **npm**:
 ```bash
 npm install underscore-express
 ```
 
-...will do it.
+***or*** add `underscore-express` to your **package.json** file.
 
 ## Usage
 
@@ -73,3 +72,7 @@ res.render('index');
 ```
 
 `include` is relative to the file it is called from. Feel free to use relative paths like `../../some/other/subtemplate`.
+
+## Example App
+
+For example application/usage see **./example/app.js**

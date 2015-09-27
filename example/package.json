@@ -1,17 +1,19 @@
 {
   "name": "underscore-express",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "author": "Casey Foster <c@sey.me>",
-  "description": "ExpressJS Underscore View Renderer",
-  "main": "underscore-express",
+  "contributors":[
+    "https://github.com/nelsonic @nelsonic"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/caseywebdev/underscore-express"
   },
   "dependencies": {
-    "underscore": "*"
+    "express":"*",
+    "underscore-express":"*"
   },
   "devDependencies": {
-    "underscore": "1.8.3"
+    "underscore": "x"
   }
 }
